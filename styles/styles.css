@@ -42,7 +42,7 @@ p {
   font-weight: lighter;
 }
 
-span {
+.content__filter span {
   margin-left: 20px;
   width: 20%;
 }
@@ -70,4 +70,39 @@ span {
 }
 .content__table {
   margin: 20px;
+}
+
+.link_edit {
+  color: #034ea2;
+  padding-right: 10px;
+}
+
+.link_delete {
+  color: #fb0808;
+  padding-right: 10px;
+}
+
+.link_delete:hover {
+  color: #fb0808;
+}
+
+.content__form {
+  margin: 50px;
+  width: 30%;
+}
+
+.content__form_button {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.content__button_cancel {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.content__button_save {
+  width: 50%;
 }
