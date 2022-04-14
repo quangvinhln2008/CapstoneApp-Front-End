@@ -29,5 +29,12 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "types": [
+    "node",
+    "webpack",
+    "react",
+    "react-dom",
+    "reactstrap"
+  ],
 }
