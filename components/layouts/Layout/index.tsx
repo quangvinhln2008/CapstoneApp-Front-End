@@ -1,10 +1,24 @@
 import React from 'react'
+import Footer from '../Footer'
+import Header from '../Header'
+import MainContainer from '../MainContainer'
+import Navigation from '../Navigation'
 
-function Layout(props) {
+import style from './Layout.module.css'
+
+interface PropsType {
+  children: JSX.Element
+}
+function Layout(props: PropsType) {
   return (
-    <div>
-      <div className="wrap">{props.children}</div>
-    </div>
+    <>
+      <Header />
+      <MainContainer>
+        <Navigation />
+        <main className={style.layout}>{props.children}</main>
+      </MainContainer>
+      <Footer />
+    </>
   )
 }
 
