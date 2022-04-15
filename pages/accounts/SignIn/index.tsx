@@ -1,9 +1,8 @@
 import React from 'react'
-// import Layout from 'components/layouts/Layout'
 import { Label, Button, Form, FormGroup, Input } from 'reactstrap'
-import style from './SignIn.module.css'
+import style from './signin.module.css'
 
-function SignIn() {
+const SignIn = () => {
   return (
     <div className={style.wrap}>
       <div className={style.wrap__header}>

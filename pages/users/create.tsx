@@ -1,17 +1,18 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
-import style from './User.module.css'
+import style from './user.module.css'
 
-function User() {
+const User = () => {
   const router = useRouter()
 
-  const handleCancelClick = e => {
+  function handleCancelClick(e: MouseEvent): void {
     e.preventDefault()
     router.push('/users')
   }
+
   return (
     <>
       <Head>
@@ -31,7 +32,7 @@ function User() {
         </FormGroup>
         <FormGroup>
           <Label for="role">Role:</Label>
-          <Input id="password" name="password" type="select">
+          <Input id="role" name="role" type="select">
             <option value="owner">Owner</option>
             <option value="project">Project Manager</option>
             <option value="billing">Billing Manager</option>

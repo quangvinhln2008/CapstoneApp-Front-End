@@ -1,8 +1,7 @@
-import Link from 'next/link'
 import React from 'react'
-import style from './Footer.module.css'
+import style from './footer.module.css'
 
-function Footer() {
+const Footer = () => {
   return (
     <div className={style.footer}>
       <p>Copyright © 2022 by Survivors Team, an UDT courses. All right reserved. </p>

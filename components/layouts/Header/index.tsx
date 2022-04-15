@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
-import style from './Header.module.css'
+import style from './header.module.css'
 
-function Header() {
+const Header = () => {
   return (
     <div className={style.header}>
       <div className={style.header__title}>

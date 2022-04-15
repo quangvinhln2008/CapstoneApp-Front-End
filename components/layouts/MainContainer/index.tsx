@@ -1,7 +1,11 @@
 import React from 'react'
-import style from './MainContainer.module.css'
+import style from './mainContainer.module.css'
 
-function MainContainer(props) {
+interface IMainContainerProps {
+  children: JSX.Element
+}
+
+const MainContainer = (props: IMainContainerProps): JSX.Element => {
   return <div className={style.main_container}>{props.children}</div>
 }
 

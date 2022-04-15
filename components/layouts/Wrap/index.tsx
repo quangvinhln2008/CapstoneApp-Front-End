@@ -1,10 +1,10 @@
 import React from 'react'
-import style from './Wrap.module.css'
+import style from './wrap.module.css'
 
-interface PropsType {
+interface IWrapProps {
   children: JSX.Element
 }
-function Layout(props: PropsType) {
+const Layout = (props: IWrapProps): JSX.Element => {
   return (
     <div>
       <div className={style.wrap}>{props.children}</div>

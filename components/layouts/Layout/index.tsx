@@ -3,13 +3,12 @@ import Footer from '../Footer'
 import Header from '../Header'
 import MainContainer from '../MainContainer'
 import Navigation from '../Navigation'
+import style from './layout.module.css'
 
-import style from './Layout.module.css'
-
-interface PropsType {
+interface ILayoutProps {
   children: JSX.Element
 }
-function Layout(props: PropsType) {
+const Layout = (props: ILayoutProps) => {
   return (
     <>
       <Header />

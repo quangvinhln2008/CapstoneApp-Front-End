@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
-import style from './Navigation.module.css'
+import style from './navigation.module.css'
 
 import {
   FaFolderOpen,
@@ -15,7 +15,7 @@ import {
   FaTasks
 } from 'react-icons/fa'
 
-function Navigation() {
+const Navigation = () => {
   return (
     <div className={style.navigation}>
       <div className={style.nav_group}>

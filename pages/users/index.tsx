@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { Button, Input, Table } from 'reactstrap'
 import style from './User.module.css'
 
-function User() {
+const User = () => {
   const router = useRouter()
 
-  const handleAddClick = e => {
+  function handleAddClick(e: MouseEvent): void {
     e.preventDefault()
     router.push('/users/create')
   }
