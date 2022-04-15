@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../SignIn/signin.module.css'
 import { Button, Form } from 'reactstrap'
-import InputGroup from 'components/layouts/InputGroup'
+import InputGroup from '../../../components/InputGroup'
 import Link from 'next/link'
 
 const ForgotPassword = () => {

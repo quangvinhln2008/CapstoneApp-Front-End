@@ -1,7 +1,7 @@
 import React from 'react'
 import { Label, Button, Form, FormGroup, Input } from 'reactstrap'
 import style from './signin.module.css'
-import InputGroup from 'components/layouts/InputGroup'
+import InputGroup from '../../../components/InputGroup'
 import Link from 'next/link'
 
 const SignIn = () => {

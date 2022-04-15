@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import React, { ChangeEvent, ChangeEventHandler, MouseEvent, useState } from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import style from './user.module.css'
-import InputGroup from 'components/layouts/InputGroup'
+import InputGroup from '../../components/InputGroup'
 
 const User = () => {
   const router = useRouter()
