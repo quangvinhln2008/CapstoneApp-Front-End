@@ -19,7 +19,7 @@ const User = () => {
         <title>Capstone Application | User</title>
       </Head>
       <div className="content__header">
-        <h2>USER LIST</h2>
+        <h2>User list</h2>
         <Button color="primary" className="button--add" onClick={handleAddClick}>
           Add new Users
         </Button>

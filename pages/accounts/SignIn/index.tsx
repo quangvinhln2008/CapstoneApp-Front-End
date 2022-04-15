@@ -1,6 +1,8 @@
 import React from 'react'
 import { Label, Button, Form, FormGroup, Input } from 'reactstrap'
 import style from './signin.module.css'
+import InputGroup from 'components/layouts/InputGroup'
+import Link from 'next/link'
 
 const SignIn = () => {
   return (
@@ -10,25 +12,27 @@ const SignIn = () => {
         <p>Enter you account to log in</p>
       </div>
       <Form className={style.wrap__form}>
-        <FormGroup>
-          <Label className={style.wrap__label} for="email">
-            Email:
-          </Label>
-          <Input id="emal" name="email" placeholder="Enter your email" type="email" />
-        </FormGroup>
-        <FormGroup>
-          <Label className={style.wrap__label} for="password">
-            Password:
-          </Label>
-          <Input id="password" name="password" placeholder="Enter your password" type="password" />
-        </FormGroup>
+        <InputGroup
+          name="email"
+          label="Email:"
+          type="email"
+          placeholder="Enter your email"
+          className={style.wrap__label}
+        />
+        <InputGroup
+          name="password"
+          label="Password:"
+          type="password"
+          placeholder="Enter your password"
+          className={style.wrap__label}
+        />
         <Button className={style.wrap__button} color="primary">
           Sign In
         </Button>
       </Form>
-      <a href="/accounts/forgotpassword" className={style.wrap__link}>
-        Forgot password
-      </a>
+      <Link href="/accounts/forgotpassword">
+        <a className={style.wrap__link}>Forgot password</a>
+      </Link>
     </div>
   )
 }
