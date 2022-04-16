@@ -1,6 +1,14 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React, { ChangeEvent, ChangeEventHandler, EventHandler, MouseEvent, useState } from 'react'
+import React, {
+  ChangeEvent,
+  ChangeEventHandler,
+  EventHandler,
+  FormEvent,
+  FormEventHandler,
+  MouseEvent,
+  useState
+} from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import style from './user.module.css'
 import InputGroup from '../../components/InputGroup'
@@ -29,7 +37,8 @@ const User = () => {
     router.push('/users')
   }
 
-  function handleSaveClick(e: MouseEvent): void {
+  function handleSaveClick(e: FormEvent<HTMLFormElement>): void {
+    e.preventDefault()
     console.log('click')
   }
 
@@ -41,7 +50,7 @@ const User = () => {
       <div className="content__header">
         <h2>Add new user</h2>
       </div>
-      <Form className="content__form">
+      <Form onSubmit={handleSaveClick} className="content__form">
         <InputGroup onChange={handleUserNameChange} value={userName} name="userName" label="User name:" type="text" />
         <InputGroup onChange={handleEmailChange} value={email} name="email" label="Email" type="email" />
         <FormGroup>
@@ -57,7 +66,7 @@ const User = () => {
           <Button onClick={handleCancelClick} className="content__button_cancel" outline>
             Cancel
           </Button>
-          <Button onClick={handleSaveClick} className="content__button_save" color="success">
+          <Button className="content__button_save" color="success">
             Add new user
           </Button>
         </div>
