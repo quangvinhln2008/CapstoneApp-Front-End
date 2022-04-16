@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import React from 'react'
 import style from './navigation.module.css'
-
 import {
   FaFolderOpen,
   FaServer,

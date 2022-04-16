@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React, { ChangeEvent, ChangeEventHandler, MouseEvent, useState } from 'react'
+import React, { ChangeEvent, ChangeEventHandler, EventHandler, MouseEvent, useState } from 'react'
 import { Button, Form, FormGroup, Input, Label, Table } from 'reactstrap'
 import style from './user.module.css'
 import InputGroup from '../../components/InputGroup'
@@ -10,7 +10,15 @@ const User = () => {
 
   const [userRole, setUserRole] = useState('')
   const [userName, setUserName] = useState('')
-  const [userEmail, setUserEmail] = useState('')
+  const [email, setEmail] = useState('')
+
+  function handleUserNameChange(value: string): void {
+    setUserName(value)
+  }
+
+  function handleEmailChange(value: string): void {
+    setEmail(value)
+  }
 
   function handleRoleChange(e: React.ChangeEvent<HTMLInputElement>): void {
     setUserRole(e.target.value)
@@ -34,8 +42,8 @@ const User = () => {
         <h2>Add new user</h2>
       </div>
       <Form className="content__form">
-        <InputGroup name="userName" label="User name:" type="text" />
-        <InputGroup name="email" label="Email" type="email" />
+        <InputGroup onChange={handleUserNameChange} value={userName} name="userName" label="User name:" type="text" />
+        <InputGroup onChange={handleEmailChange} value={email} name="email" label="Email" type="email" />
         <FormGroup>
           <Label for="role">Role:</Label>
           <Input id="role" name="role" onChange={handleRoleChange} type="select">

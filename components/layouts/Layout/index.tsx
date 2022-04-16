@@ -8,7 +8,7 @@ import style from './layout.module.css'
 interface ILayoutProps {
   children: JSX.Element
 }
-const Layout = (props: ILayoutProps) => {
+const Layout = (props: ILayoutProps): JSX.Element => {
   return (
     <>
       <Header />
