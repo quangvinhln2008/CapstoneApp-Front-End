@@ -20,56 +20,66 @@ const Navigation = () => {
       <div className={style.navGroup}>
         <p>Setting</p>
         <div className={style.navLink}>
-          <div className={style.navLinkItem}>
-            <FaFolderOpen />
-            <Link href="/accounts/configuration">Configuration</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaUserAlt />
-            <Link href="/users">User</Link>
-          </div>
+          <Link href="/accounts/configuration">
+            <a className={style.navLinkItem}>
+              <FaFolderOpen /> Configuration
+            </a>
+          </Link>
+          <Link href="/users">
+            <a className={style.navLinkItem}>
+              <FaUserAlt /> User
+            </a>
+          </Link>
         </div>
       </div>
       <div className={style.navGroup}>
         <p>Mange</p>
         <div className={style.navLink}>
-          <div className={style.navLinkItem}>
-            <FaTh />
-            <Link href="/accounts/SignIn">Project</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaPeriscope />
-            <Link href="/droplets">Droplets</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaRegFileImage />
-            <Link href="/images">Images</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaMoneyBillAlt />
-            <Link href="/billing">Bilings</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaTasks />
-            <Link href="/firewalls">Firewalls</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaWatchmanMonitoring />
-            <Link href="/monitoring">Monitoring</Link>
-          </div>
+          <Link href="/accounts/SignIn">
+            <a className={style.navLinkItem}>
+              <FaTh /> Project
+            </a>
+          </Link>
+          <Link href="/droplets">
+            <a className={style.navLinkItem}>
+              <FaPeriscope /> Droplets
+            </a>
+          </Link>
+          <Link href="/images">
+            <a className={style.navLinkItem}>
+              <FaRegFileImage /> Images
+            </a>
+          </Link>
+          <Link href="/billing">
+            <a className={style.navLinkItem}>
+              <FaMoneyBillAlt /> Bilings
+            </a>
+          </Link>
+          <Link href="/firewalls">
+            <a className={style.navLinkItem}>
+              <FaTasks /> Firewalls
+            </a>
+          </Link>
+          <Link href="/monitorings">
+            <a className={style.navLinkItem}>
+              <FaWatchmanMonitoring /> Monitoring
+            </a>
+          </Link>
         </div>
       </div>
       <div className={style.navGroup}>
         <p>List</p>
         <div className={style.navLink}>
-          <div className={style.navLinkItem}>
-            <FaShieldVirus />
-            <Link href="/regions">Regions</Link>
-          </div>
-          <div className={style.navLinkItem}>
-            <FaServer />
-            <Link href="/sizes">Sizes</Link>
-          </div>
+          <Link href="/regions">
+            <a className={style.navLinkItem}>
+              <FaShieldVirus /> Regions
+            </a>
+          </Link>
+          <Link href="/sizes">
+            <a className={style.navLinkItem}>
+              <FaServer /> Sizes
+            </a>
+          </Link>
         </div>
       </div>
     </div>
