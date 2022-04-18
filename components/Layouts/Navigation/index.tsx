@@ -22,7 +22,7 @@ const Navigation = () => {
         <div className={style.navLink}>
           <div className={style.navLinkItem}>
             <FaFolderOpen />
-            <Link href="/configuration">Configuration</Link>
+            <Link href="/accounts/configuration">Configuration</Link>
           </div>
           <div className={style.navLinkItem}>
             <FaUserAlt />

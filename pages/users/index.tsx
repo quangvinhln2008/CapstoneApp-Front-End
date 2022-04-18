@@ -23,17 +23,17 @@ const User = () => {
       <Head>
         <title>Capstone Application | User</title>
       </Head>
-      <div className="content__header">
+      <div className="contentHeader">
         <h2>User list</h2>
-        <Button color="primary" className="button--add" onClick={handleAddClick}>
+        <Button color="primary" className="buttonAdd" onClick={handleAddClick}>
           Add new Users
         </Button>
       </div>
-      <div className="content__filter">
+      <div className="contentFilter">
         <span>Filter by:</span>
         <Input id="userName" name="userName" placeholder="User name....." type="text" />
       </div>
-      <div className="content__table">
+      <div className="contentTable">
         <Table hover>
           <thead>
             <tr>
@@ -54,11 +54,11 @@ const User = () => {
               </td>
               <td>
                 <Link href="/users/1/edit">
-                  <a className="link_edit">Edit</a>
+                  <a className="linkEdit">Edit</a>
                 </Link>
-                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                <button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
-                </Button>
+                </button>
               </td>
             </tr>
             <tr>
@@ -70,11 +70,11 @@ const User = () => {
               </td>
               <td>
                 <Link href="/users/1/edit">
-                  <a className="link_edit">Edit</a>
+                  <a className="linkEdit">Edit</a>
                 </Link>
-                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                <button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
-                </Button>
+                </button>
               </td>
             </tr>
             <tr>
@@ -86,11 +86,11 @@ const User = () => {
               </td>
               <td>
                 <Link href="/users/1/edit">
-                  <a className="link_edit">Edit</a>
+                  <a className="linkEdit">Edit</a>
                 </Link>
-                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                <button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
-                </Button>
+                </button>
               </td>
             </tr>
           </tbody>

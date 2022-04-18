@@ -1,68 +1,83 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import React, { FormEvent, MouseEvent, useState } from 'react'
-import { Button, Form, FormGroup, Input, Label, Modal, Table } from 'reactstrap'
+import React, { FormEvent, MouseEvent, useEffect, useState } from 'react'
+import { FaCheck } from 'react-icons/fa'
+import { Alert, Button, Form, FormGroup, Input, Label, Modal, Table } from 'reactstrap'
 import InputGroup from '../../../components/InputGroup'
 
-const User = () => {
+const Configuration = () => {
   const router = useRouter()
 
-  const [userRole, setUserRole] = useState('')
-  const [userName, setUserName] = useState('')
-  const [email, setEmail] = useState('')
+  const [cloudServices, setCloudServices] = useState('')
+  const [tokenAccess, setTokenAccess] = useState('')
+  const [toogleMessage, setToogleMessage] = useState(false)
+  const [elementToogleMessage, setElementToogleMessage] = useState('')
 
-  function handleUserNameChange(value: string): void {
-    setUserName(value)
+  function handleTokenAccessChange(value: string): void {
+    setTokenAccess(value)
   }
 
-  function handleEmailChange(value: string): void {
-    setEmail(value)
-  }
-
-  function handleRoleChange(e: React.ChangeEvent<HTMLInputElement>): void {
-    setUserRole(e.target.value)
+  function handleCloudServicesChange(e: React.ChangeEvent<HTMLInputElement>): void {
+    setCloudServices(e.target.value)
   }
 
   function handleCancelClick(e: MouseEvent): void {
     e.preventDefault()
-    router.push('/users')
+    router.push('/')
   }
 
   function handleSaveClick(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault()
-    console.log('click')
+
+    setToogleMessage(!toogleMessage)
+
+    console.log(elementToogleMessage)
   }
+
+  useEffect(() => {
+    if (toogleMessage) {
+      setElementToogleMessage(`<Alert color="success">
+                                <FaCheck /> <span>Connect cloud successfull</span>
+                              </Alert>`)
+    }
+  }, [toogleMessage])
 
   return (
     <>
       <Head>
-        <title>Capstone Application | User</title>
+        <title>Capstone Application | Configuration cloud</title>
       </Head>
-      <div className="content__header">
+      <div className="contentHeader">
         <h2>Configuration Cloud Services</h2>
       </div>
-      <Form onSubmit={handleSaveClick} className="content__form">
-        <InputGroup onChange={handleUserNameChange} value={userName} name="userName" label="User name:" type="text" />
-        <InputGroup onChange={handleEmailChange} value={email} name="email" label="Email" type="email" />
+      <Form onSubmit={handleSaveClick} className="contentForm">
         <FormGroup>
-          <Label for="role">Role:</Label>
-          <Input id="role" name="role" onChange={handleRoleChange} type="select">
-            <option value="owner">Owner</option>
-            <option value="project">Project Manager</option>
-            <option value="billing">Billing Manager</option>
-            <option value="developer">Developer</option>
+          <Label for="cloudServices">Cloud services:</Label>
+          <Input id="cloudServices" name="cloudServices" onChange={handleCloudServicesChange} type="select">
+            <option value="">Choose cloud services...</option>
+            <option value="DO">Digital Occens</option>
+            <option value="aws">AWS</option>
           </Input>
         </FormGroup>
-        <div className="content__form_button">
-          <Button onClick={handleCancelClick} className="content__button_cancel" outline>
+        <InputGroup
+          onChange={handleTokenAccessChange}
+          value={tokenAccess}
+          name="tokenAccess"
+          label="Token Access:"
+          type="text"
+        />
+        <div className="contenFormButton">
+          <Button onClick={handleCancelClick} className="buttonCancel" outline>
             Cancel
           </Button>
-          <Button className="content__button_save" color="success">
-            Add new user
+          <Button className="buttonSave" color="primary">
+            Connect cloud services
           </Button>
         </div>
       </Form>
+      {elementToogleMessage}
     </>
   )
 }
-export default User
+
+export default Configuration
