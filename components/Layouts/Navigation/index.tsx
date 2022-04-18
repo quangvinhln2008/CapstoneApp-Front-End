@@ -37,7 +37,7 @@ const Navigation = () => {
         <div className={style.navLink}>
           <Link href="/accounts/SignIn">
             <a className={style.navLinkItem}>
-              <FaTh /> Project
+              <FaTh /> Projects
             </a>
           </Link>
           <Link href="/droplets">
@@ -62,7 +62,7 @@ const Navigation = () => {
           </Link>
           <Link href="/monitorings">
             <a className={style.navLinkItem}>
-              <FaWatchmanMonitoring /> Monitoring
+              <FaWatchmanMonitoring /> Monitorings
             </a>
           </Link>
         </div>
