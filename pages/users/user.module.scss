@@ -1,0 +1,39 @@
+.user__role {
+  margin: 0px;
+  padding: 5px;
+  width: 50%;
+  height: 45px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.owner {
+  background-color: #28a745;
+}
+
+.developer {
+  background-color: #17a2b8;
+}
+
+.billing {
+  background-color: #aa681c;
+}
+
+.project {
+  background-color: #3a4097;
+}
+
+.button_link {
+  background-color: transparent;
+  border: 0px;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: transparent;
+    color: #fb0808;
+  }
+
+  &.delete {
+    color: #fb0808;
+  }
+}

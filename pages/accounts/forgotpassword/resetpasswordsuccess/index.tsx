@@ -1,20 +1,21 @@
 import React from 'react'
-import Layout from 'components/layouts/Layout'
+import style from '../SignIn/signin.module.scss'
+import { Label, Button, Form, FormGroup, Input } from 'reactstrap'
 
-function ResetPassSuccess() {
+const ResetPassSuccess = () => {
   return (
-    <Layout>
-      <div className="wrap__header">
+    <div className={style.wrap}>
+      <div className={style.wrapHeader}>
         <h1>CAPSTONE APP</h1>
         <p>Enter you email address. We will send you a new password</p>
       </div>
-      <div className="wrap__info">
+      <div className={style.wrapInfo}>
         <p>An email have send to your email address. Check your email to get new password.</p>
       </div>
-      <a href="/accounts/SignIn" className="wrap__link">
+      <a href="/accounts/SignIn" className={style.wrapLink}>
         Log in to your account
       </a>
-    </Layout>
+    </div>
   )
 }
 

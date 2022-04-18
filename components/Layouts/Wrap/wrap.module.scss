@@ -1,0 +1,53 @@
+.wrap {
+  margin: auto;
+  background-color: #274668;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  width: 450px;
+  height: 600px;
+  max-width: 500px;
+
+  .wrapHeader {
+    margin: 50px;
+  }
+
+  .wrapForm {
+    text-align: left;
+    margin: 50px;
+  }
+
+  .wrapLabel {
+    color: #fff;
+    font-size: 18px;
+    font-weight: lighter;
+  }
+
+  .wrapButton {
+    width: 350px;
+    height: 50px;
+    max-width: 350px;
+    margin-top: 20px;
+  }
+
+  .wrapLink {
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: lighter;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+  .wrapLinkInfo {
+    margin: 20px 20px 70px 20px;
+  }
+}
+
+.wrapContainer {
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
