@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import React, { MouseEvent, useState } from 'react'
 import { Button, Input, Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap'
-import style from './user.module.css'
+import style from './user.module.scss'
 
 const User = () => {
   const router = useRouter()
