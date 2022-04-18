@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../SignIn/signin.module.css'
+import style from '../SignIn/signin.module.scss'
 import { Button, Form } from 'reactstrap'
 import InputGroup from '../../../components/InputGroup'
 import Link from 'next/link'
@@ -7,24 +7,24 @@ import Link from 'next/link'
 const ForgotPassword = () => {
   return (
     <div className={style.wrap}>
-      <div className={style.wrap__header}>
+      <div className={style.wrapHeader}>
         <h1>CAPSTONE APP</h1>
         <p>Enter you email address. We will send you a new password</p>
       </div>
-      <Form className={style.wrap__form}>
+      <Form className={style.wrapForm}>
         <InputGroup
           name="email"
           label="Email:"
           type="email"
           placeholder="Enter your email"
-          className={style.wrap__label}
+          className={style.wrapLabel}
         />
-        <Button className={style.wrap__button} color="primary">
+        <Button className={style.wrapButton} color="primary">
           Reset password
         </Button>
       </Form>
       <Link href="/accounts/SignIn">
-        <a className={style.wrap__link}>Log in to your account</a>
+        <a className={style.wrapLink}>Log in to your account</a>
       </Link>
     </div>
   )

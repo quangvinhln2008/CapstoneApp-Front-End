@@ -5,10 +5,10 @@ import style from './header.module.scss'
 const Header = () => {
   return (
     <div className={style.header}>
-      <div className={style.header__title}>
+      <div className={style.headerTitle}>
         <h1>CAPSTONE APP</h1>
       </div>
-      <div className={style.header__link}>
+      <div className={style.headerLink}>
         <Link href="#">
           <a>Wellcome, Kenshin</a>
         </Link>

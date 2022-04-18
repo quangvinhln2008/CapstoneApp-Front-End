@@ -6,7 +6,7 @@
   border: 1px solid #c6c9ce;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  .nav_group {
+  .navGroup {
     border-bottom: 1px #c6c9ce solid;
 
     svg {
@@ -20,27 +20,26 @@
       font-size: 20px;
       font-weight: bold;
     }
-  }
-
-  .nav_link {
-    display: block;
-    margin-left: 20px;
-
-    &_items {
-      margin: 5px;
-      padding: 10px;
+    .navLink {
       display: block;
+      margin-left: 20px;
 
-      a {
-        margin-left: 10px;
-        color: #000;
-        text-decoration: none;
-      }
+      .navLinkItem {
+        margin: 5px;
+        padding: 10px;
+        display: block;
 
-      &:hover {
-        background-color: #c6c9ce;
-        cursor: pointer;
-        border-radius: 5px;
+        a {
+          margin-left: 10px;
+          color: #000;
+          text-decoration: none;
+        }
+
+        &:hover {
+          background-color: #c6c9ce;
+          cursor: pointer;
+          border-radius: 5px;
+        }
       }
     }
   }
