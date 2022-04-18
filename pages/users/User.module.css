@@ -22,3 +22,18 @@
 .project {
   background-color: #3a4097;
 }
+
+.button_link {
+  background-color: transparent;
+  border: 0px;
+  text-decoration: underline;
+}
+
+.button_link:hover {
+  background-color: transparent;
+  color: #fb0808;
+}
+
+.delete {
+  color: #fb0808;
+}

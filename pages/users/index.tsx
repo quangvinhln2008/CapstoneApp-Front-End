@@ -1,16 +1,21 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
-import React, { MouseEvent } from 'react'
-import { Button, Input, Table } from 'reactstrap'
+import React, { MouseEvent, useState } from 'react'
+import { Button, Input, Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap'
 import style from './user.module.css'
 
 const User = () => {
   const router = useRouter()
+  const [modalForm, setModalForm] = useState(false)
 
   function handleAddClick(e: MouseEvent): void {
     e.preventDefault()
     router.push('/users/create')
+  }
+
+  function handleToogleModalForm(): void {
+    setModalForm(!modalForm)
   }
 
   return (
@@ -48,12 +53,12 @@ const User = () => {
                 <span className={`${style.user__role} ${style.owner}`}>Owner</span>
               </td>
               <td>
-                <Link href="/users/1">
+                <Link href="/users/1/edit">
                   <a className="link_edit">Edit</a>
                 </Link>
-                <Link href="/users/1">
-                  <a className="link_delete">Delete</a>
-                </Link>
+                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                  Delete
+                </Button>
               </td>
             </tr>
             <tr>
@@ -64,12 +69,12 @@ const User = () => {
                 <span className={`${style.user__role} ${style.project}`}>Project</span>
               </td>
               <td>
-                <Link href="/users/1">
+                <Link href="/users/1/edit">
                   <a className="link_edit">Edit</a>
                 </Link>
-                <Link href="/users/1">
-                  <a className="link_delete">Delete</a>
-                </Link>
+                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                  Delete
+                </Button>
               </td>
             </tr>
             <tr>
@@ -80,17 +85,27 @@ const User = () => {
                 <span className={`${style.user__role} ${style.developer}`}>Developer</span>
               </td>
               <td>
-                <Link href="/users/1">
+                <Link href="/users/1/edit">
                   <a className="link_edit">Edit</a>
                 </Link>
-                <Link href="/users/1">
-                  <a className="link_delete">Delete</a>
-                </Link>
+                <Button className={`${style.button_link} ${style.delete}`} onClick={handleToogleModalForm}>
+                  Delete
+                </Button>
               </td>
             </tr>
           </tbody>
         </Table>
       </div>
+      <Modal isOpen={modalForm} toggle={handleToogleModalForm} backdrop="static">
+        <ModalHeader toggle={handleToogleModalForm}>Delete user</ModalHeader>
+        <ModalBody>Do you want delete user...?</ModalBody>
+        <ModalFooter>
+          <Button color="danger">Delete</Button>{' '}
+          <Button outline color="secondary" onClick={handleToogleModalForm}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
     </>
   )
 }

@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { FormEvent, MouseEvent, useState } from 'react'
-import { Button, Form, FormGroup, Input, Label, Modal, Table } from 'reactstrap'
-import InputGroup from '../../components/InputGroup'
+import { Button, Form, FormGroup, Input, Label } from 'reactstrap'
+import InputGroup from '../../../components/InputGroup'
 
-const User = () => {
+const Edit = () => {
   const router = useRouter()
 
   const [userRole, setUserRole] = useState('')
@@ -39,7 +39,7 @@ const User = () => {
         <title>Capstone Application | User</title>
       </Head>
       <div className="content__header">
-        <h2>Add new user</h2>
+        <h2>Eit user</h2>
       </div>
       <Form onSubmit={handleSaveClick} className="content__form">
         <InputGroup onChange={handleUserNameChange} value={userName} name="userName" label="User name:" type="text" />
@@ -58,11 +58,11 @@ const User = () => {
             Cancel
           </Button>
           <Button className="content__button_save" color="success">
-            Add new user
+            Update user
           </Button>
         </div>
       </Form>
     </>
   )
 }
-export default User
+export default Edit
