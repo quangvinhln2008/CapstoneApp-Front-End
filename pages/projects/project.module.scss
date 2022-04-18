@@ -1,0 +1,23 @@
+.projectDetail {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.buttonLink {
+  background-color: transparent;
+  border: 0px;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: transparent;
+    color: #fb0808;
+  }
+
+  &.delete {
+    color: #fb0808;
+  }
+}
