@@ -13,18 +13,18 @@ interface IInputGroupProps {
 }
 
 const InputGroup = (props: IInputGroupProps): JSX.Element => {
-  const [value, setValue] = useState('')
+  const { label, name, type, className, placeholder, value } = props
   return (
     <FormGroup>
-      <Label className={props.className} for={props.name}>
-        {props.label}
+      <Label className={className} for={name}>
+        {label}
       </Label>
       <Input
-        value={props.value}
-        id={props.name}
-        name={props.name}
-        type={props.type}
-        placeholder={props.placeholder}
+        value={value}
+        id={name}
+        name={name}
+        type={type}
+        placeholder={placeholder}
         onChange={(e: ChangeEvent<HTMLInputElement>) => props.onChange(e.target.value)}
       />
     </FormGroup>

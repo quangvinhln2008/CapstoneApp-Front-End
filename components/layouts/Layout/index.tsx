@@ -8,13 +8,15 @@ import style from './layout.module.css'
 interface ILayoutProps {
   children: JSX.Element
 }
+
 const Layout = (props: ILayoutProps): JSX.Element => {
+  const { children } = props
   return (
     <>
       <Header />
       <MainContainer>
         <Navigation />
-        <main className={style.layout}>{props.children}</main>
+        <main className={style.layout}>{children}</main>
       </MainContainer>
       <Footer />
     </>
