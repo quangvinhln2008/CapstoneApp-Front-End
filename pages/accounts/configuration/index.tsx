@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { FormEvent, MouseEvent, useEffect, useState } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { Alert, Button, Form, FormGroup, Input, Label, Modal, Table } from 'reactstrap'
 import InputGroup from '../../../components/InputGroup'
+import style from './configuration.module.scss'
 
 const Configuration = () => {
   const router = useRouter()
@@ -11,8 +13,11 @@ const Configuration = () => {
   const [cloudServices, setCloudServices] = useState('')
   const [tokenAccess, setTokenAccess] = useState('')
   const [toogleMessage, setToogleMessage] = useState(false)
-  const [elementToogleMessage, setElementToogleMessage] = useState('')
-
+  const elementInfo = (
+    <span>
+      <Link href="/users">Click here</Link> to retrive and manage resources of cloud service.
+    </span>
+  )
   function handleTokenAccessChange(value: string): void {
     setTokenAccess(value)
   }
@@ -31,17 +36,8 @@ const Configuration = () => {
 
     setToogleMessage(!toogleMessage)
 
-    console.log(elementToogleMessage)
+    console.log('click')
   }
-
-  useEffect(() => {
-    if (toogleMessage) {
-      setElementToogleMessage(`<Alert color="success">
-                                <FaCheck /> <span>Connect cloud successfull</span>
-                              </Alert>`)
-    }
-  }, [toogleMessage])
-
   return (
     <>
       <Head>
@@ -56,7 +52,7 @@ const Configuration = () => {
           <Input id="cloudServices" name="cloudServices" onChange={handleCloudServicesChange} type="select">
             <option value="">Choose cloud services...</option>
             <option value="DO">Digital Occens</option>
-            <option value="aws">AWS</option>
+            <option value="AWS">AWS</option>
           </Input>
         </FormGroup>
         <InputGroup
@@ -74,8 +70,12 @@ const Configuration = () => {
             Connect cloud services
           </Button>
         </div>
+        <Alert className={style.alertToogle} color="success" isOpen={toogleMessage}>
+          <FaCheck />
+          <span> Connect cloud services successfull</span>
+        </Alert>
+        {toogleMessage ? elementInfo : ''}
       </Form>
-      {elementToogleMessage}
     </>
   )
 }
