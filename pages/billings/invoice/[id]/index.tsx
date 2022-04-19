@@ -4,6 +4,7 @@ import Router, { useRouter } from 'next/router'
 import React, { MouseEvent, useState } from 'react'
 import { Button, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap'
 import style from '../../billing.module.scss'
+import { FaAngleLeft } from 'react-icons/fa'
 
 const InvoiceSumary = () => {
   const router = useRouter()
@@ -39,6 +40,11 @@ const InvoiceSumary = () => {
         </div>
         <div className={style.subContent}>
           <h2>Invoice Sumary</h2>
+          <Link href="/billings/invoice">
+            <a className={style.buttonLinkContent}>
+              <FaAngleLeft /> Back to Invoice lists
+            </a>
+          </Link>
           <div className={`${style.wrapContent} ${style.display}`}>
             <div className={style.subWrap}>
               <h3 className={style.titleContent}>Invoice period</h3>
@@ -66,34 +72,28 @@ const InvoiceSumary = () => {
               </p>
             </div>
           </div>
-          <div className={`${style.wrapContent} ${style.display}`}>
-            <Table>
+          <div className={`${style.wrapContent}`}>
+            <Table hover className={style.tableContent}>
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Name</th>
+                  <th>Amount</th>
+                  <th>Count</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>Spaces Subscription</td>
+                  <td>$10.00</td>
+                  <td>1</td>
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
+                  <td>Database Clusters</td>
+                  <td>$2.34</td>
+                  <td>1</td>
                 </tr>
               </tbody>
             </Table>
