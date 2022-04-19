@@ -50,7 +50,7 @@ const Navigation = () => {
               <FaRegFileImage /> Images
             </a>
           </Link>
-          <Link href="/billing">
+          <Link href="/billings">
             <a className={style.navLinkItem}>
               <FaMoneyBillAlt /> Bilings
             </a>
