@@ -34,10 +34,16 @@ const DropletItem = (props: IInputGroupProps): JSX.Element => {
               More Action
             </DropdownToggle>
             <DropdownMenu>
-              <DropdownItem href="/droplets/1/history">View History</DropdownItem>
-              <DropdownItem href="/droplets/1/monitoring">Monitoring</DropdownItem>
+              <Link href="/droplets/1/history">
+                <DropdownItem>View History</DropdownItem>
+              </Link>
+              <Link href="/droplets/1/monitoring">
+                <DropdownItem>Monitoring</DropdownItem>
+              </Link>
               <DropdownItem divider />
-              <DropdownItem className={style.buttonDestroy}>Destroy</DropdownItem>
+              <Link href="/droplets/1/destroy">
+                <DropdownItem className={style.buttonDestroy}>Destroy</DropdownItem>
+              </Link>
             </DropdownMenu>
           </ButtonDropdown>
         </td>
