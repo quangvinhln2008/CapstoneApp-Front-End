@@ -38,10 +38,10 @@ const Edit = () => {
       <Head>
         <title>Capstone Application | User</title>
       </Head>
-      <div className="content__header">
+      <div className="contentHeader">
         <h2>Eit user</h2>
       </div>
-      <Form onSubmit={handleSaveClick} className="content__form">
+      <Form onSubmit={handleSaveClick} className="contentForm">
         <InputGroup onChange={handleUserNameChange} value={userName} name="userName" label="User name:" type="text" />
         <InputGroup onChange={handleEmailChange} value={email} name="email" label="Email" type="email" />
         <FormGroup>
@@ -53,11 +53,11 @@ const Edit = () => {
             <option value="developer">Developer</option>
           </Input>
         </FormGroup>
-        <div className="content__form_button">
-          <Button onClick={handleCancelClick} className="content__button_cancel" outline>
+        <div className="contenFormButton">
+          <Button onClick={handleCancelClick} className="buttonCancel" outline>
             Cancel
           </Button>
-          <Button className="content__button_save" color="success">
+          <Button className="buttonSave" color="primary">
             Update user
           </Button>
         </div>
