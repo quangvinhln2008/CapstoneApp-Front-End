@@ -3,15 +3,15 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import React, { MouseEvent, useState } from 'react'
 import { Button, Input, Modal, ModalBody, ModalFooter, ModalHeader, Table } from 'reactstrap'
-import style from './user.module.scss'
+import style from './firewall.module.scss'
 
-const User = () => {
+const Firewall = () => {
   const router = useRouter()
   const [modalForm, setModalForm] = useState(false)
 
   function handleAddClick(e: MouseEvent): void {
     e.preventDefault()
-    router.push('/users/create')
+    router.push('/projects/create')
   }
 
   function handleToogleModalForm(): void {
@@ -21,41 +21,45 @@ const User = () => {
   return (
     <>
       <Head>
-        <title>Capstone Application | User</title>
+        <title>Capstone Application | Firewalls</title>
       </Head>
       <div className="contentHeader">
-        <h2>User List</h2>
-        <Button color="primary" className="buttonAdd" onClick={handleAddClick}>
-          Add new Users
-        </Button>
+        <h2>Firewall</h2>
+        {/* <Button color="primary" className="buttonAdd" onClick={handleAddClick}>
+          Add New Project
+        </Button> */}
       </div>
       <div className="contentFilter">
         <span>Filter by:</span>
-        <Input id="userName" name="userName" placeholder="User name....." type="text" />
+        <Input id="firewallName" name="projectName" placeholder="Firewall name....." type="text" />
       </div>
       <div className="contentTable">
         <Table hover>
           <thead>
             <tr>
               <th>#</th>
-              <th>User Name</th>
-              <th>Email</th>
-              <th>Role</th>
+              <th>Firewall Name</th>
+              <th>Status</th>
+              <th>Create at</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>mark@gmail.com</td>
               <td>
-                <span className={`${style.userRole} ${style.owner}`}>Owner</span>
+                <Link href="/firewalls/1">
+                  <a className={style.firewallDetail}>firewall 01</a>
+                </Link>
               </td>
               <td>
-                <Link href="/users/1/edit">
+                <span className={`${style.firewallStatus} ${style.success}`}>Success</span>
+              </td>
+              <td>2018-09-27</td>
+              <td>
+                {/* <Link href="/projects/1/edit">
                   <a className="linkEdit">Edit</a>
-                </Link>
+                </Link> */}
                 <button className={`${style.buttonLink} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
                 </button>
@@ -63,15 +67,19 @@ const User = () => {
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Jacob@gmail.com</td>
               <td>
-                <span className={`${style.userRole} ${style.project}`}>Project</span>
+                <Link href="/firewalls/1">
+                  <a className={style.firewallDetail}>Firewall 02</a>
+                </Link>
               </td>
               <td>
-                <Link href="/users/1/edit">
+                <span className={`${style.firewallStatus} ${style.waiting}`}>Waiting</span>
+              </td>
+              <td>2018-09-27</td>
+              <td>
+                {/* <Link href="/firewall/1/edit">
                   <a className="linkEdit">Edit</a>
-                </Link>
+                </Link> */}
                 <button className={`${style.buttonLink} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
                 </button>
@@ -79,15 +87,19 @@ const User = () => {
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td>Larry</td>
-              <td>larry@gmail.com</td>
               <td>
-                <span className={`${style.userRole} ${style.developer}`}>Developer</span>
+                <Link href="/firewalls/1">
+                  <a className={style.firewallDetail}>firewall 03</a>
+                </Link>
               </td>
               <td>
-                <Link href="/users/1/edit">
+                <span className={`${style.firewallStatus} ${style.failed}`}>Failed</span>
+              </td>
+              <td>2018-09-27</td>
+              <td>
+                {/* <Link href="/projects/1/edit">
                   <a className="linkEdit">Edit</a>
-                </Link>
+                </Link> */}
                 <button className={`${style.buttonLink} ${style.delete}`} onClick={handleToogleModalForm}>
                   Delete
                 </button>
@@ -97,8 +109,8 @@ const User = () => {
         </Table>
       </div>
       <Modal isOpen={modalForm} toggle={handleToogleModalForm} backdrop="static">
-        <ModalHeader toggle={handleToogleModalForm}>Delete user</ModalHeader>
-        <ModalBody>Do you want delete user...?</ModalBody>
+        <ModalHeader toggle={handleToogleModalForm}>Delete firewall</ModalHeader>
+        <ModalBody>Do you want delete firewall configuration...?</ModalBody>
         <ModalFooter>
           <Button color="danger">Delete</Button>{' '}
           <Button outline color="secondary" onClick={handleToogleModalForm}>
@@ -109,4 +121,4 @@ const User = () => {
     </>
   )
 }
-export default User
+export default Firewall
