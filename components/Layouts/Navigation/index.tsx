@@ -35,7 +35,7 @@ const Navigation = () => {
       <div className={style.navGroup}>
         <p>Mange</p>
         <div className={style.navLink}>
-          <Link href="/accounts/SignIn">
+          <Link href="/projects">
             <a className={style.navLinkItem}>
               <FaTh /> Projects
             </a>
@@ -50,7 +50,7 @@ const Navigation = () => {
               <FaRegFileImage /> Images
             </a>
           </Link>
-          <Link href="/billing">
+          <Link href="/billings">
             <a className={style.navLinkItem}>
               <FaMoneyBillAlt /> Bilings
             </a>

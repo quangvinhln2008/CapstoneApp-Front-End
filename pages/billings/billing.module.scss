@@ -1,0 +1,120 @@
+.subContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+
+  .leftNavigation {
+    margin-left: 20px;
+    background-color: #fff;
+    color: #000;
+    width: 15%;
+    max-width: 15%;
+
+    .navLinkItem {
+      margin: 5px;
+      padding: 10px;
+      display: block;
+      margin-left: 10px;
+      color: #000;
+      text-decoration: none;
+      align-items: center;
+
+      &:hover {
+        background-color: #c6c9ce;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+    }
+
+    .active {
+      font-weight: bold;
+    }
+  }
+
+  .subContent {
+    width: 80%;
+    margin-left: 20px;
+    border: 1px solid #c6c9ce;
+
+    h2 {
+      width: 95%;
+    }
+
+    p {
+      color: #000;
+      font-size: 18px;
+      font-weight: lighter;
+      margin: 20px;
+    }
+
+    button {
+      margin: 20px;
+    }
+
+    .wrapContent {
+      margin: 20px;
+      border: 1px solid #c6c9ce;
+      border-radius: 5px;
+
+      .subWrap {
+        width: 30%;
+        align-self: center;
+
+        .price {
+          font-weight: bold;
+          font-size: 30px;
+          padding: 0px 30px;
+          color: #000;
+        }
+      }
+
+      .titleContent {
+        margin: 20px;
+        color: #000;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .detailContent {
+        margin-left: 20px;
+        color: #757474;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.display {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.decriptionContent {
+  color: #000;
+  font-size: 18px;
+  font-weight: lighter;
+  margin: 20px;
+  text-align: center;
+}
+
+.tableContent {
+  width: 70%;
+  margin: 20px;
+}
+
+.buttonLinkContent {
+  color: #000;
+  font-size: 20px;
+  font-weight: lighter;
+  background-color: transparent;
+  border: 0px;
+  margin-left: 20px;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    color: #757474;
+  }
+}
